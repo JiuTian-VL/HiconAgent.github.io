@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 1) 在加载 MathJax 之前先设置配置 -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$']],
+          tags: 'ams'  // 支持 \tag 等
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          // 如果你用动态插入，保留 typesetPromise 可用
+        }
+      };
+    </script>
+
+    <!-- 2) 加载 MathJax（CDN）-->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HiconAgent: History Context-aware Policy Optimization for GUI Agents">
+    <title>HiconAgent: History Context-aware Policy Optimization for GUI Agents</title>
+    <script>
+
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title" style="font-weight: bold; font-size: 45px;">
+                            HiconAgent: History Context-aware Policy Optimization for GUI Agents
+                        </h1>
+                        <!-- <h2 style="font-weight: bold; font-size: 32px;">ICCV 2025</h2> -->
+
+                        <span class="author-block">
+                            <a>Xurui Zhou</a><sup>1</sup>,
+                            <a href="https://scholar.google.com/citations?user=Mpg0w3cAAAAJ" target="_blank">Gongwei Chen</a><sup>1</sup>,
+                            <a>Yuquan Xie</a><sup>1</sup>,
+                            <a href="https://scholar.google.com/citations?user=TDBF2UoAAAAJ" target="_blank">Zaijing Li</a><sup>1</sup>,
+                            <a href="https://jnhujnhu.github.io/" target="_blank">Kaiwen Zhou</a><sup>2</sup>,
+                            <br>
+                            <a>Shuai Wang</a><sup>2</sup>,
+                            <a href="https://shuoyang-1998.github.io/" target="_blank">Shuo Yang</a><sup>1</sup>,
+                            <a href="https://scholar.google.com/citations?user=mEjhz-IAAAAJ" target="_blank">Zhuotao Tian</a><sup>1</sup>,
+                            <a href="https://scholar.google.com/citations?user=9Vc--XsAAAAJ" target="_blank">Rui Shao</a>                            <sup>1&#9993;</sup>
+                        </span>
+                        <div class="is-size-5 publication-authors" style="font-size: 10px;">
+                            <span class="author-block"><sup>1</sup>Harbin Institute of Technology,
+                                Shenzhen&#160;&#160;&#160;</span>
+                            <span class="author-block"><sup>2</sup>Huawei Noah’s Ark Lab</span>
+                        </div>
+                        <div class="is-size-5 publication-authors" style="font-size: 10px;">
+                            <span class="author-block"><sup>&#9993;&#160;</sup>Corresponding
+                                author&#160;&#160;</span>
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a target="_blank" href=""
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a target="_blank" href="https://hf-mirror.com/datasets/Minuskid/HiconAgent-AMEX"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+                                            alt="HF" 
+                                            width="18" 
+                                            style="vertical-align: middle;">
+                                                                             </span>
+                                        <span>Data</span>
+                                    </a>
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/JiuTian-VL/HiconAgent"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <br />
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                    <p style="font-size: 125%;">
+                        Graphical User Interface (GUI) agents require effective utilization of historical context to perform sequential navigation tasks. 
+                        While incorporating past actions and observations can significantly improve decision-making, naively using full history leads to 
+                        excessive computational overhead and potential distraction from irrelevant information. 
+                        In this work, we introduce <b>HiconAgent</b>, a GUI agent trained with 
+                        <b>History Context-aware Policy Optimization (HCPO)</b> for effective and efficient utilization of historical information. 
+                        HCPO explicitly optimizes history usage in both sampling and policy updates by integrating two complementary components: 
+                        <b>(1) Dynamic Context Sampling (DCS)</b> presents the agent with variable-length histories during sampling, enabling adaptive use 
+                        of the most relevant historical context to improve sequential decision quality; 
+                        <b>(2) Anchor-guided History Compression (AHC)</b> refines the policy update phase via a dual-branch optimization strategy, where 
+                        the compressed branch drops history observations while keeping history actions as information flow anchors. 
+                        The compressed and uncompressed branches are coupled through a history-enhanced alignment loss to enforce consistent history usage, 
+                        achieving efficiency with minimal performance degradation. 
+                        Extensive experiments on mainstream GUI navigation benchmarks demonstrate the strong performance of our model. 
+                        Despite its smaller size, HiconAgent-3B outperforms GUI-R1-7B by <b>+8.46%</b> grounding and <b>+11.32%</b> step successful rate 
+                        on GUI-Odyssey, while achieving comparable results on AndroidControl and AITW, with up to <b>2.47× computational speedup</b> 
+                        and <b>60% FLOPs reduction</b>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3">Introduction</h2>
+                        <img src="assets/images/teaser.png" class="interpolation-image" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                        <span style="font-size: 110%">
+                            The role of <b>history usage</b> in RL-based GUI agents remains largely underexplored. Most prior works adopt a simplified design in which history observations (past screenshots) are omitted, and only history actions are included as the input context. While this choice reduces memory and computational cost, it discards rich visual cues from past observations that are often essential for resolving ambiguous instructions, grounding visually similar elements, and maintaining temporal consistency across steps. Conversely, naively incorporating complete history, including both past actions and observations, substantially increases computational overhead due to the quadratic complexity of attention mechanisms and the large number of visual tokens from high-resolution screenshots. This trade-off between decision quality and efficiency motivates the development of methods that can effectively retain the most informative parts of historical context while mitigating redundancy.
+                            
+                            To this end, we propose <b>History Context-aware Policy Optimization</b>, a training framework designed to improve both the effectiveness and efficiency of history usage in GUI agents. As illustrated in the teaser, HCPO improves both the sampling and update phases of existing GUI RL framework through two complementary components: <b>Dynamic Context Sampling</b> and <b>Anchor-guided History Compression</b>.                                                     </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3">Rethinking History Usage: Limitations of Fixed Context and the Anchoring Role of Actions</h2>
+                        <img src="assets/images/optimal_bar.png" class="interpolation-image" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+
+                        <span style="font-size: 110%">
+                            Different samples prefer different history lengths. 
+                            Left: For each sample we evaluate a set of different history lengths $\tau$ and take the $\tau$ 
+                            that yields the highest mean reward. The preferred $\tau$ differs across samples and action types. 
+                            Right: Providing more history does not necessarily yield the optimal result, suggesting effective usage of historical 
+                            information is under exploration.
+                                                        </span>
+
+                        <img src="assets/images/info_test.png" class="interpolation-image" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto" />
+                    <br>
+                    <span style="font-size: 110%">
+                        Layer-wise token-drop analysis. Left: Schematic of the layer-wise token-drop probe, illustrating the information flow 
+                        of image-drop and action-drop. Right: Dropping $A_{\mathrm{his}}$ at shallow depths ($k < 12$) 
+                        causes a much larger decline than dropping $V_{\mathrm{his}}$. 
+                        Even if rich visual information is retained, later layers cannot directly extract effective cues from 
+                        $V_{\mathrm{his}}$ without the action anchors. 
+                        As $k$ increases, the action-drop curve rises toward the image-drop curve and the image-action drop curve 
+                        converges rapidly.
+                                                </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3">Overview Framework of HiconAgent</h2>
+                        <img src="assets/images/framework_v8.png" class="interpolation-image" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                        <span style="font-size: 110%">
+                            Overview of our history context-aware optimization framework for building HiconAgent. 
+                            HCPO improves both the sampling and update phases of policy optimization by incorporating two key components: 
+                            (1) <b>Dynamic Context Sampling (DCS)</b>, which introduces varied history lengths during training to encourage 
+                            context-effective decision-making, and 
+                            (2) <b>Anchor-guided History Compression (AHC)</b>, which adopts a dual-branch architecture where both branches 
+                            share sampled responses and group-wise advantages. The compressed branch is trained using policy gradients, 
+                            aligned with the uncompressed branch via a history-enhanced alignment loss.
+                                                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- result -->
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Experiment</span></h2>
+                            <table>
+                              <tr>
+                                <td><img src="./assets/images/table1.png" alt="Table 1" width="480"></td>
+                                <td><img src="./assets/images/table2.png" alt="Table 2" width="740"></td>
+                              </tr>
+                            </table>
+                            <span style="font-size: 110%">
+                            We present the main experimental results in Table 1 and Table 2 on three representative GUI navigation datasets: AndroidControl-High, AITW and GUI-Odyssey. Table 1 provides a detailed comparison under the same data scale and training settings, highlighting the effect of our history-aware optimization strategy against both supervised fine-tuning and reinforcement fine-tuning baselines. Table 2 further extends the comparison to recent advanced GUI agents of varying model sizes and training data volumes, demonstrating the generalization ability of our approach in out-of-distribution (OOD) scenarios.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Qualitative Results</span></h2>
+                        <span style="font-size: 110%"></span>
+
+
+<!--                        <h1><span class="dvima">Visualization of the register-to-image attention map.</span></h1>-->
+                        <img src="assets/images/case_study_2_01.png" class="interpolation-image" alt="" width="1050"
+                             style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                        <span style="font-size: 110%">
+                            To better understand how history length affects agent behavior, we provide a case study comparing the base model and our HiconAgent-3B under different history lengths $\tau \in \{0,1,2\}$. As shown in the figure, the base model performs correctly when using shorter contexts ($\tau=0$ or $\tau=1$), but fails when the history is extended to $\tau=2$, where the additional observations introduce distracting or misleading information, causing the model to attend to an incorrect UI element and produce the wrong action. In contrast, our model, trained with Dynamic Context Sampling, still produces the correct action when $\tau=2$. Since DCS exposes the agent to diverse and progressively biased history lengths during optimization, the model learns to effectively utilize extended context. This qualitative evidence supports our quantitative results, demonstrating that naively increasing history is suboptimal, whereas HCPO equips the agent with robustness across variable context windows and enables it to benefit from longer history when necessary.
+                        </span>
+                        <br><br><br>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Conclusion-->
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Conclusion</span></h2>
+
+                        <p style="font-size: 125%">
+                            In this paper, we present HiconAgent, a history-aware GUI agent trained with History Context-aware Policy Optimization. Through extensive empirical investigations, we first revisited how history is utilized in GUI reinforcement learning agents. Our two key studies revealed that different decision steps prefer different history lengths and historical actions serve as information flow anchors. By pairing DCS and AHC, our model outperforms larger models with fewer FLOPs. These results highlight HiconAgent as a practical path toward lightweight, high-performance GUI agents.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section" id="BibTeX">
+        <div class="container is-max-widescreen content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@inproceedings{zhang2025falcon,
+  title={Falcon: Resolving visual redundancy and fragmentation in high-resolution multimodal large language models via visual registers},
+  author={Zhang, Renshan and Shao, Rui and Chen, Gongwei and Zhang, Miao and Zhou, Kaiwen and Guan, Weili and Nie, Liqiang},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={23530--23540},
+  year={2025}
+}</code></pre>
+        </div>
+    </section> -->
+
+</body>
+
+</html>
